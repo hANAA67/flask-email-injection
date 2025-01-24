@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invite Your Friends</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9f5fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success {
+            color: green;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Invite Your Friends</h1>
+        <form method="POST">
+            <label for="email">Friend's Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your friend's email" required>
+
+            <label for="message">Custom Message:</label>
+            <textarea id="message" name="message" placeholder="Write a message to your friend" rows="5" required></textarea>
+
+            <button type="submit">Send Invite</button>
+        </form>
+
+        {% if success %}
+            <p class="success">Invitation sent successfully!</p>
+        {% elif success is not none %}
+            <p class="error">Failed to send email: {{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
