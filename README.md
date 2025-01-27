@@ -26,7 +26,7 @@ This guide walks you through setting up a vulnerable Flask application, running 
 
 ## Setting Up the Application
 ### Step 1: Clone the following github repo
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+https://github.com/hANAA67/flask-email-injection/tree/main
 
 ### Step 2: Configure Email Settings
 Set Up Gmail App Password:
